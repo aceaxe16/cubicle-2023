@@ -1,13 +1,12 @@
 const express = require("express");
-const config = require("./config")
-const app = express();
-const handlebars = require('express-handlebars');
 
-app.engine('hbs', handlebars.engine({
-    extname: "hbs",
-}));
-app.set("view engine", 'hbs');
-app.set('views', './src/views');
+const config = require("./config")
+const setupViewEngine = require('./config/viewEngine');
+
+const app = express();
+setupViewEngine(app)
+
+
 
 app.get("/", (req,res) => {
     res.render("home");
