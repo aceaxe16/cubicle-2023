@@ -4,7 +4,7 @@
   "description": "small Project(express practise)",
   "main": "src/index.js",
   "scripts": {
-    "start": "node ./src/index.js",
+    "start": "SET node_env=production&& node ./src/index.js",
     "dev": "nodemon ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,5 +20,9 @@
   "homepage": "https://github.com/aceaxe16/cubicle-2023#readme",
   "devDependencies": {
     "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.6"
   }
 }
