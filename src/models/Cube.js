@@ -20,7 +20,7 @@ const cubeSchema = new mongoose.Schema({
     difficultyLevel: {
         type: Number,
         required: true,
-        max: 6,
+        max: 8,
         min: 1
     }
 })
