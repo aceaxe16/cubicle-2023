@@ -3,6 +3,7 @@ const express = require("express");
 const routes = require('./routes')
 const config = require("./config")
 const setupViewEngine = require('./config/viewEngine');
+const initDataBase = require('./config/databaseinit')
 
 
 const app = express();
@@ -13,4 +14,6 @@ app.use(express.urlencoded({extended: false}))
 app.use(routes)
 
 
-app.listen(config.PORT, () => console.log(`Server is running of port ${config.PORT}......`))
+initDataBase()
+    .then(() => app.listen(config.PORT, () => console.log(`Server is running of port ${config.PORT}......`)))
+    .catch((err) => console.error(err.message))
