@@ -1,5 +1,7 @@
 const Cube = require('../models/Cube');
 const Accessory = require('../models/Accessory');
+const jwt = require('../lib/jsonwebtoken');
+const config = require('../config');
 
 
 
@@ -8,7 +10,8 @@ exports.getCreateCube = (req,res) => {
 }
 
 
-exports.postCreateCube = async (req, res) => {
+exports.postCreateCube = async (req, res) => {   
+
     const {name, description, imageUrl, difficultyLevel} = req.body;    
     let cube = new Cube({name, description, imageUrl, difficultyLevel});
 
