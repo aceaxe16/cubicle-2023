@@ -17,10 +17,12 @@ router.use('/', authController)
 
 router.get('/cubes/create', isAuthenticated, cubeController.getCreateCube);
 router.post('/cubes/create', isAuthenticated, cubeController.postCreateCube);
-router.get('/cubes/:cubeId/details', cubeController.getDetails)
+router.get('/cubes/:cubeId/details', cubeController.getDetails);
+router.get('cubes/:cudeId/edit', cubeController.getEditCube);
+router.get('cubes/:cudeId/delete', cubeController.getDeleteCube);
 
-router.get('/cubes/:cubeId/attach', cubeController.getAttchAccessory)
-router.post('/cubes/:cubeId/attach', cubeController.postAttachAccessory)
+router.get('/cubes/:cubeId/attach', cubeController.getAttchAccessory);
+router.post('/cubes/:cubeId/attach', cubeController.postAttachAccessory);
 
 
 router.use('/accessory', accessoryController)
